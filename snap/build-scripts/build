@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eux
 
 apps="$@"
 architectures="$KUBE_ARCH"
