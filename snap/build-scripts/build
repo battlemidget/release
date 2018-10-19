@@ -22,11 +22,11 @@ if [ -z "$KUBE_SNAP_BINS" ]; then
       else
         for arch in $architectures; do
           mkdir -p $arch
+          echo "WTF IS HAPPENING"
           (cd $arch
             echo "Fetching $app $KUBE_VERSION $arch"
-            # curl --tlsv1.2 -vLO \
-            #   https://dl.k8s.io/${KUBE_VERSION}/bin/linux/$arch/$app
-            wget -O "$app" "https://dl.k8s.io/${KUBE_VERSION}/bin/linux/$arch/$app"
+            curl -vLO \
+              https://dl.k8s.io/${KUBE_VERSION}/bin/linux/$arch/$app
             chmod +x $app
             if ! file ${app} 2>&1 | grep -q 'executable'; then
               echo "${app} is not an executable"
