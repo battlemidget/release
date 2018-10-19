@@ -1,4 +1,4 @@
-FROM s390x/ubuntu:bionic
+FROM s390x/ubuntu:xenial
 RUN apt-get update && \
   apt-get dist-upgrade --yes && \
   apt-get install --yes \
