@@ -64,6 +64,9 @@ for app in $apps; do
         -e "s/\$SNAP_ARCH/$SNAP_ARCH/g" $app.yaml > $build_dir/snapcraft.yaml
 
     (cd $build_dir && snapcraft)
+    ls -la $build_dir
     mv $build_dir/*.snap build
+    pwd
+    ls -la build
   done
 done
