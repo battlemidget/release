@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export DOCKER_OPTS="--mtu 1400"
 docker build -f "./Dockerfile.$(uname -m)" -t docker-build .
 docker run --rm -v $PWD/build:/code/build \
        -e KUBE_ARCH=$KUBE_ARCH \
