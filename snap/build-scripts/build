@@ -53,7 +53,6 @@ for app in $apps; do
 
     export KUBE_ARCH="$arch"
     declare -A kube_arch_to_snap_arch=(
-      [ppc64le]=ppc64el
       [arm]=armhf
     )
     export SNAP_ARCH="${kube_arch_to_snap_arch[$arch]:-$arch}"
