@@ -24,7 +24,7 @@ if [ -z "$KUBE_SNAP_BINS" ]; then
           mkdir -p $arch
           (cd $arch
             echo "Fetching $app $KUBE_VERSION $arch"
-            curl -vLO \
+            curl --tlsv1 -vLO \
               https://dl.k8s.io/${KUBE_VERSION}/bin/linux/$arch/$app
             chmod +x $app
             if ! file ${app} 2>&1 | grep -q 'executable'; then
