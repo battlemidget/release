@@ -22,7 +22,6 @@ if [ -z "$KUBE_SNAP_BINS" ]; then
       else
         for arch in $architectures; do
           mkdir -p $arch
-          echo "WTF IS HAPPENING"
           (cd $arch
             echo "Fetching $app $KUBE_VERSION $arch"
             curl -vLO \

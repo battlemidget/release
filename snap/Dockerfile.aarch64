@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:xenial
+FROM arm64v8/ubuntu:bionic
 RUN apt-get update && \
   apt-get dist-upgrade --yes && \
   apt-get install --yes \
